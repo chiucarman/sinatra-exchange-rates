@@ -8,3 +8,9 @@ get("/") do
   "
   erb(:hello)
 end
+
+get("/:currency") do
+end
+
+get("/:currency/:currency") do
+end
