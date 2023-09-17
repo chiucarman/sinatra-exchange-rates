@@ -12,5 +12,5 @@ end
 get("/:currency") do
 end
 
-get("/:currency/:currency") do
+get("/:first_currency/:second_currency") do
 end
