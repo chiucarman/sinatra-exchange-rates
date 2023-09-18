@@ -10,6 +10,7 @@ get("/") do
 end
 
 get("/:currency") do
+  @currency = params.fetch("currency")
 end
 
 get("/:first_currency/:second_currency") do
