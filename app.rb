@@ -20,6 +20,13 @@ end
 
 get("/:currency") do
   @currency = params.fetch("currency")
+  
+  symbols_url = "https://api.exchangerate.host/symbols"
+  resp = HTTP.get(symbols_url)
+  raw_reponse = resp.to_s
+
+  parsed_response = JSON.parse(raw_reponse)
+  @symbols = parsed_response.fetch("symbols")
 
   erb(:currency)
 end
