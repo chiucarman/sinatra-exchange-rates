@@ -31,7 +31,9 @@ get("/:currency") do
   erb(:currency)
 end
 
-get("/:first_currency/:second_currency") do
+get("/:first_country/:second_country") do
+  @first_country = params.fetch("first_country")
+  @second_country = params.fetch("second_country")
 
   erb(:conversion)
 end
