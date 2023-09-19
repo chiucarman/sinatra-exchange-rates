@@ -20,7 +20,7 @@ end
 
 get("/:currency") do
   @currency = params.fetch("currency")
-  
+
   symbols_url = "https://api.exchangerate.host/symbols"
   resp = HTTP.get(symbols_url)
   raw_reponse = resp.to_s
@@ -32,4 +32,6 @@ get("/:currency") do
 end
 
 get("/:first_currency/:second_currency") do
+
+  erb(:conversion)
 end
