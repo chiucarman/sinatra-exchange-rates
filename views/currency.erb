@@ -10,7 +10,7 @@
   <% @symbols.each do |symbol| %>
     <% country = symbol.at(0) %>
     <li>
-      <a href="/<%= country %>"><%= "Convert 1 #{country} to..." %></a>
+      <a href="/<%= @currency %>/<%= country %>"><%= "Convert 1 #{@currency} to #{country}..." %></a>
     </li>
   <% end %>
 </ul>
