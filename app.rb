@@ -3,21 +3,6 @@ require "sinatra/reloader"
 require "http"
 require "json"
 
-# first_country = "USD"
-# second_country = "INR"
-
-# conversion_url = "https://api.exchangerate.host/convert?from=#{first_country}&to=#{second_country}"
-
-# resp = HTTP.get(conversion_url)
-
-# raw_reponse = resp.to_s
-
-# parsed_response = JSON.parse(raw_reponse)
-
-# info = parsed_response.fetch("info")
-
-# puts rate = info.fetch("rate")
-
 get("/") do
   "
   <h1>Welcome to your Sinatra App!</h1>
