@@ -10,8 +10,11 @@ get("/") do
   "
   symbols_url = "https://api.exchangerate.host/symbols"
   resp = HTTP.get(symbols_url)
-  pp raw_reponse = resp.to_s
-  
+  raw_reponse = resp.to_s
+
+  parsed_response = JSON.parse(raw_reponse)
+  pp symbols = parsed_response.fetch("symbols")
+
   erb(:hello)
 end
 
