@@ -13,7 +13,12 @@ get("/") do
   raw_reponse = resp.to_s
 
   parsed_response = JSON.parse(raw_reponse)
-  pp symbols = parsed_response.fetch("symbols")
+  symbols = parsed_response.fetch("symbols")
+
+  symbols.each do |symbol|
+    country = symbol.at(0)
+    puts "#{country}"
+  end
 
   erb(:hello)
 end
