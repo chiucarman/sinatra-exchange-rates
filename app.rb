@@ -3,6 +3,13 @@ require "sinatra/reloader"
 require "http"
 require "json"
 
+@first_country = "USD"
+@second_country = "INR"
+
+@conversion_url = "https://api.exchangerate.host/convert?from=#{@first_country}&to=#{@second_country}"
+
+
+
 get("/") do
   "
   <h1>Welcome to your Sinatra App!</h1>
@@ -34,6 +41,8 @@ end
 get("/:first_country/:second_country") do
   @first_country = params.fetch("first_country")
   @second_country = params.fetch("second_country")
+
+  @conversion_url = "https://api.exchangerate.host/convert?from=#{@first_country}&to=#{@second_country}"
 
   erb(:conversion)
 end
